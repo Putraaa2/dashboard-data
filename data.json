@@ -1,0 +1,61 @@
+[
+  { "produk": "NHK R6", "revenue": 350000 },
+  { "produk": "NHK R6", "revenue": 360000 },
+  { "produk": "NHK R6", "revenue": 355000 },
+  { "produk": "NHK R6", "revenue": 340000 },
+  { "produk": "NHK R6", "revenue": 370000 },
+
+  { "produk": "KYT TT Course", "revenue": 520000 },
+  { "produk": "KYT TT Course", "revenue": 530000 },
+  { "produk": "KYT TT Course", "revenue": 510000 },
+  { "produk": "KYT TT Course", "revenue": 525000 },
+  { "produk": "KYT TT Course", "revenue": 540000 },
+
+  { "produk": "INK CX-22", "revenue": 420000 },
+  { "produk": "INK CX-22", "revenue": 415000 },
+  { "produk": "INK CX-22", "revenue": 430000 },
+  { "produk": "INK CX-22", "revenue": 425000 },
+  { "produk": "INK CX-22", "revenue": 410000 },
+
+  { "produk": "AGV K1", "revenue": 2500000 },
+  { "produk": "AGV K1", "revenue": 2450000 },
+  { "produk": "AGV K1", "revenue": 2550000 },
+  { "produk": "AGV K1", "revenue": 2600000 },
+  { "produk": "AGV K1", "revenue": 2480000 },
+
+  { "produk": "Shoei RF-1400", "revenue": 7200000 },
+  { "produk": "Shoei RF-1400", "revenue": 7300000 },
+  { "produk": "Shoei RF-1400", "revenue": 7100000 },
+  { "produk": "Shoei RF-1400", "revenue": 7250000 },
+  { "produk": "Shoei RF-1400", "revenue": 7350000 },
+
+  { "produk": "Arai RX-7V", "revenue": 8500000 },
+  { "produk": "Arai RX-7V", "revenue": 8600000 },
+  { "produk": "Arai RX-7V", "revenue": 8400000 },
+  { "produk": "Arai RX-7V", "revenue": 8700000 },
+  { "produk": "Arai RX-7V", "revenue": 8550000 },
+
+  { "produk": "GM Evo", "revenue": 280000 },
+  { "produk": "GM Evo", "revenue": 290000 },
+  { "produk": "GM Evo", "revenue": 275000 },
+  { "produk": "GM Evo", "revenue": 300000 },
+  { "produk": "GM Evo", "revenue": 285000 },
+
+  { "produk": "BMC Classic", "revenue": 190000 },
+  { "produk": "BMC Classic", "revenue": 185000 },
+  { "produk": "BMC Classic", "revenue": 200000 },
+  { "produk": "BMC Classic", "revenue": 195000 },
+  { "produk": "BMC Classic", "revenue": 180000 },
+
+  { "produk": "LS2 Challenger", "revenue": 3200000 },
+  { "produk": "LS2 Challenger", "revenue": 3300000 },
+  { "produk": "LS2 Challenger", "revenue": 3150000 },
+  { "produk": "LS2 Challenger", "revenue": 3400000 },
+  { "produk": "LS2 Challenger", "revenue": 3250000 },
+
+  { "produk": "Bell Qualifier", "revenue": 2100000 },
+  { "produk": "Bell Qualifier", "revenue": 2050000 },
+  { "produk": "Bell Qualifier", "revenue": 2150000 },
+  { "produk": "Bell Qualifier", "revenue": 2200000 },
+  { "produk": "Bell Qualifier", "revenue": 2080000 }
+]
