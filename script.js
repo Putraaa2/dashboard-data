@@ -1,73 +1,71 @@
-async function tampilkanDashboard() {
-  const response = await fetch('data.json');
-  const data = await response.json();
+async function loadData() {
+  const res = await fetch('data.json');
+  const data = await res.json();
 
-  // Hitung total revenue per produk
-  const revenuePerProduk = {};
+  return data;
+}
+
+function sumByGroup(data, groupKey, valueKey) {
+  const result = {};
   data.forEach(item => {
-    if (!revenuePerProduk[item.produk]) {
-      revenuePerProduk[item.produk] = 0;
-    }
-    revenuePerProduk[item.produk] += item.revenue;
+    const key = item[groupKey];
+    result[key] = (result[key] || 0) + item[valueKey];
   });
+  return result;
+}
 
-  // Ambil top 5
-  const topProduk = Object.entries(revenuePerProduk)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 5);
-
-  const labels = topProduk.map(item => item[0]);
-  const revenues = topProduk.map(item => item[1]);
-
-  // Bar Chart
-  new Chart(document.getElementById('barChart'), {
-    type: 'bar',
+function renderChart(ctxId, type, labels, datasetLabel, data, colors = null) {
+  new Chart(document.getElementById(ctxId), {
+    type: type,
     data: {
       labels: labels,
       datasets: [{
-        label: 'Penjualan (Rp)',
-        data: revenues,
-        backgroundColor: 'rgba(75, 192, 192, 0.7)'
+        label: datasetLabel,
+        data: data,
+        backgroundColor: colors || 'rgba(54, 162, 235, 0.6)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
       }]
     },
     options: {
       responsive: true,
       plugins: {
-        title: {
-          display: true,
-          text: 'Top 5 Helm Terlaris - Bar Chart'
-        }
-      }
-    }
-  });
-
-  // Pie Chart
-  new Chart(document.getElementById('pieChart'), {
-    type: 'pie',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'Penjualan (Rp)',
-        data: revenues,
-        backgroundColor: [
-          '#FF6384',
-          '#36A2EB',
-          '#FFCE56',
-          '#4BC0C0',
-          '#9966FF'
-        ]
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        title: {
-          display: true,
-          text: 'Persentase Penjualan - Pie Chart'
-        }
+        legend: { display: type !== 'bar' || ctxId === 'productContribution' },
+        title: { display: false }
       }
     }
   });
 }
 
-tampilkanDashboard();
+loadData().then(data => {
+  // 1. Tren Bulanan
+  const monthlyRevenue = sumByGroup(data, 'bulan', 'revenue');
+  const bulan = Object.keys(monthlyRevenue);
+  const pendapatan = Object.values(monthlyRevenue);
+  renderChart('trendRevenue', 'line', bulan, 'Revenue', pendapatan);
+
+  // 2. Produk Teratas
+  const revenuePerProduk = sumByGroup(data, 'produk', 'revenue');
+  const topProduk = Object.entries(revenuePerProduk).sort((a,b) => b[1]-a[1]).slice(0,5);
+  const produkLabels = topProduk.map(p => p[0]);
+  const produkRevenue = topProduk.map(p => p[1]);
+  renderChart('topProducts', 'bar', produkLabels, 'Revenue', produkRevenue);
+
+  // 3. Wilayah
+  const revenuePerWilayah = sumByGroup(data, 'wilayah', 'revenue');
+  const wilayahLabels = Object.keys(revenuePerWilayah);
+  const wilayahRevenue = Object.values(revenuePerWilayah);
+  const regionColors = ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0', '#9966FF'];
+  renderChart('revenueByRegion', 'pie', wilayahLabels, 'Revenue', wilayahRevenue, regionColors);
+
+  // 4. Stok
+  const stokPerProduk = sumByGroup(data, 'produk', 'stok');
+  const stokLabels = Object.keys(stokPerProduk);
+  const stokData = Object.values(stokPerProduk);
+  renderChart('stockPriority', 'bar', stokLabels, 'Stock', stokData);
+
+  // 5. Donut Chart Kontribusi
+  const totalRevenueAll = produkRevenue.reduce((a,b) => a + b, 0);
+  const kontribusiPersen = produkRevenue.map(v => (v / totalRevenueAll * 100).toFixed(1));
+  renderChart('productContribution', 'doughnut', produkLabels, 'Kontribusi (%)', kontribusiPersen, regionColors);
+});
