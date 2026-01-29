@@ -2,14 +2,66 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard Penjualan Helm</title>
+  <title>Dashboard Penjualan Toko Helm Putra Ganteng se Nasional</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fb;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+    }
+
+    .chart-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 300px !important;
+    }
+  </style>
 </head>
 <body>
-  <h1>Top 5 Produk Helm Terlaris</h1>
 
-  <canvas id="barChart" width="600" height="400"></canvas>
-  <canvas id="pieChart" width="600" height="400" style="margin-top: 50px;"></canvas>
+  <h1>Dashboard Penjualan Toko Helm Putra Ganteng se Nasioonal</h1>
+
+  <div class="chart-box">
+    <h3>Tren Pendapatan Total (Bulanan)</h3>
+    <canvas id="trendRevenue"></canvas>
+  </div>
+
+  <div class="dashboard">
+    <div class="chart-box">
+      <h3>5 Produk Teratas</h3>
+      <canvas id="topProducts"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Pendapatan berdasarkan Wilayah</h3>
+      <canvas id="revenueByRegion"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Indikator Prioritas Stok</h3>
+      <canvas id="stockPriority"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Kontribusi Produk (%)</h3>
+      <canvas id="productContribution"></canvas>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
