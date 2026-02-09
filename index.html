@@ -1,65 +1,98 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard Penjualan Toko Helm Putra Ganteng se Nasional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume Sales Dashboard</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f6fb;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .dashboard {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 20px;
-    }
-
-    .chart-box {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    canvas {
-      width: 100% !important;
-      height: 300px !important;
-    }
-  </style>
 </head>
 <body>
 
-  <h1>Dashboard Penjualan Toko Helm Putra Ganteng se Nasioonal</h1>
+  <div class="container">
+    <div class="dashboard-header">
+      <h1>Perfume Sales Dashboard</h1>
+    </div>
 
-  <div class="chart-box">
-    <h3>Tren Pendapatan Total (Bulanan)</h3>
-    <canvas id="trendRevenue"></canvas>
-  </div>
+    <!-- Filter Section -->
+    <div class="filters">
+      <label for="month">Month:</label>
+      <select id="month">
+        <option value="all">All Months</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
 
-  <div class="dashboard">
-    <div class="chart-box">
-      <h3>5 Produk Teratas</h3>
-      <canvas id="topProducts"></canvas>
+      <label for="year">Year:</label>
+      <select id="year">
+        <option value="all">All Years</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+      </select>
+
+      <label for="type">Parfum Type:</label>
+      <select id="type">
+        <option value="all">All Types</option>
+        <option value="Eau de Parfum">Eau de Parfum</option>
+        <option value="Eau de Toilette">Eau de Toilette</option>
+        <option value="Eau de Cologne">Eau de Cologne</option>
+      </select>
+
+      <label for="gender">Gender:</label>
+      <select id="gender">
+        <option value="all">All</option>
+        <option value="Pria">Pria</option>
+        <option value="Wanita">Wanita</option>
+      </select>
     </div>
-    <div class="chart-box">
-      <h3>Pendapatan berdasarkan Wilayah</h3>
-      <canvas id="revenueByRegion"></canvas>
+
+    <!-- Dashboard Overview -->
+    <div class="dashboard-summary">
+      <div class="card" id="total-sales">
+        <h3>Jumlah Barang Terjual</h3>
+        <p>0</p>
+      </div>
+      <div class="card" id="total-revenue">
+        <h3>Total Penjualan</h3>
+        <p>Rp 0</p>
+      </div>
+      <div class="card" id="top-product">
+        <h3>Top 1 Produk</h3>
+        <p>-</p>
+      </div>
     </div>
-    <div class="chart-box">
-      <h3>Indikator Prioritas Stok</h3>
-      <canvas id="stockPriority"></canvas>
+
+    <!-- Growth Chart -->
+    <div class="chart-container">
+      <div class="chart-card">
+        <h3>Grafik Pertumbuhan Penjualan</h3>
+        <canvas id="growthChart"></canvas>
+      </div>
     </div>
-    <div class="chart-box">
-      <h3>Kontribusi Produk (%)</h3>
-      <canvas id="productContribution"></canvas>
+
+    <!-- Top 5 Products -->
+    <div class="chart-container">
+      <div class="chart-card">
+        <h3>Top 5 Parfum Terlaris</h3>
+        <canvas id="productsChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Suggestions for Management -->
+    <div id="suggestions" style="margin-top: 30px;">
+      <h3>Saran untuk Manajemen:</h3>
+      <p>-</p>
     </div>
   </div>
 
