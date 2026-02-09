@@ -1,23 +1,34 @@
 [
-  { "produk": "NHK R6", "revenue": 350000, "wilayah": "Jakarta", "bulan": "Jan", "stok": 120 },
-  { "produk": "NHK R6", "revenue": 370000, "wilayah": "Jakarta", "bulan": "Feb", "stok": 0 },
-  { "produk": "KYT TT Course", "revenue": 530000, "wilayah": "Bandung", "bulan": "Jan", "stok": 200 },
-  { "produk": "INK CX-22", "revenue": 420000, "wilayah": "Bandung", "bulan": "Mar", "stok": 150 },
-  { "produk": "AGV K1", "revenue": 2500000, "wilayah": "Surabaya", "bulan": "Mar", "stok": 90 },
-  { "produk": "Shoei RF-1400", "revenue": 7200000, "wilayah": "Bali", "bulan": "Apr", "stok": 50 },
-  { "produk": "Arai RX-7V", "revenue": 8500000, "wilayah": "Jakarta", "bulan": "Apr", "stok": 40 },
-  { "produk": "GM Evo", "revenue": 290000, "wilayah": "Medan", "bulan": "May", "stok": 180 },
-  { "produk": "LS2 Challenger", "revenue": 3300000, "wilayah": "Medan", "bulan": "May", "stok": 70 },
-  { "produk": "Bell Qualifier", "revenue": 2200000, "wilayah": "Surabaya", "bulan": "Jun", "stok": 60 },
-  
-  { "produk": "NHK R6", "revenue": 360000, "wilayah": "Jakarta", "bulan": "Jul", "stok": 100 },
-  { "produk": "KYT TT Course", "revenue": 510000, "wilayah": "Bandung", "bulan": "Aug", "stok": 180 },
-  { "produk": "INK CX-22", "revenue": 415000, "wilayah": "Bandung", "bulan": "Sep", "stok": 110 },
-  { "produk": "AGV K1", "revenue": 2600000, "wilayah": "Surabaya", "bulan": "Oct", "stok": 95 },
-  { "produk": "Shoei RF-1400", "revenue": 7350000, "wilayah": "Bali", "bulan": "Nov", "stok": 55 },
-  { "produk": "Arai RX-7V", "revenue": 8700000, "wilayah": "Jakarta", "bulan": "Dec", "stok": 30 },
-  { "produk": "GM Evo", "revenue": 280000, "wilayah": "Medan", "bulan": "Oct", "stok": 150 },
-  { "produk": "LS2 Challenger", "revenue": 3400000, "wilayah": "Medan", "bulan": "Nov", "stok": 65 },
-  { "produk": "Bell Qualifier", "revenue": 2080000, "wilayah": "Surabaya", "bulan": "Dec", "stok": 70 },
-  { "produk": "KYT TT Course", "revenue": 540000, "wilayah": "Bandung", "bulan": "Jul", "stok": 210 }
+  {
+    "product_name": "Eau de Parfum 'Elegance'",
+    "product_type": "Eau de Parfum",
+    "gender": "Pria",
+    "sales_quantity": 200,
+    "revenue": 2500000,
+    "sales_date": "2025-01-15"
+  },
+  {
+    "product_name": "Eau de Toilette 'Fresh Breeze'",
+    "product_type": "Eau de Toilette",
+    "gender": "Wanita",
+    "sales_quantity": 150,
+    "revenue": 1800000,
+    "sales_date": "2025-02-10"
+  },
+  {
+    "product_name": "Eau de Cologne 'Classic'",
+    "product_type": "Eau de Cologne",
+    "gender": "Pria",
+    "sales_quantity": 100,
+    "revenue": 1200000,
+    "sales_date": "2025-03-05"
+  },
+  {
+    "product_name": "Eau de Parfum 'Mystery'",
+    "product_type": "Eau de Parfum",
+    "gender": "Wanita",
+    "sales_quantity": 80,
+    "revenue": 1000000,
+    "sales_date": "2025-03-10"
+  }
 ]
